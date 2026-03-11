@@ -15,12 +15,13 @@ class Category extends Model
     // RELATIONSHIPS
     // =============================
 
-    // Products → lahat ng products na nasa category na ito
+    // Products → all ng products na nasa category na ito
     // Usage: $category->products
     //        $category->products()->where('status', 'active')->get()
     //        $category->products()->count()
     public function products()
     {
         return $this->hasMany(Product::class);
+        
     }
 }

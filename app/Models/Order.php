@@ -23,7 +23,7 @@ class Order extends Model
 
     // Buyer → kung sino ang bumili
     // Usage: $order->buyer
-    //        $order->buyer->name
+    //        $order->buyer->name 
     public function buyer()
     {
         return $this->belongsTo(User::class, 'buyer_id');
@@ -59,7 +59,7 @@ class Order extends Model
 
     // Check kung pwede pang i-cancel ang order
     // Usage: $order->isCancellable()
-    //        @if($order->isCancellable()) ... @endif
+    //        @if($order->isCancellable()) ... 
     public function isCancellable(): bool
     {
         return in_array($this->status, ['pending', 'confirmed']);
@@ -67,7 +67,7 @@ class Order extends Model
 
     // Check kung pwede na mag-review
     // Usage: $order->canBeReviewed()
-    //        @if($order->canBeReviewed()) ... @endif
+    //        @if($order->canBeReviewed()) ... 
     public function canBeReviewed(): bool
     {
         return $this->status === 'completed' && !$this->review;
