@@ -12,8 +12,10 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware){
         $middleware->alias([
+            //bali si EnsureBuyer ay mapupunta or naka store na sa 'buyer'. 
+            // Bali pag tatawagin mo si EnsurebBuyer is siya na si 'buyer'
             'buyer' => \App\Http\Middleware\EnsureBuyer::class,
-            'seller' => \App\Http\Middleware\EnsureSeller::class,
+            'seller' => \App\Http\Middleware\EnsureA::class,
              'admin'  => \App\Http\Middleware\EnsureAdmin::class,
         ]);
     })

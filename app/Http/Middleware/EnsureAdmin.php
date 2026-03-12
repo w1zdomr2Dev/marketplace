@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class EnsureAdmin
 {
-    //get isAdmin method and user from User model
+    //get isAdmin and user from User model
     public function handle(Request $request, Closure $next){
        if(!auth()->check() || !auth()->user()->isAdmin()){
         abort(403, 'Access Denied, Admin only');
