@@ -93,6 +93,7 @@ class User extends Authenticatable
     // Check kung seller ang user
     // Usage: $user->isSeller()
     //        @if(auth()->user()->isSeller()) ... @endif
+    // Used by EnsureUserIsSeller middleware to restrict seller-only routes
     public function isSeller(): bool
     {
         return $this->role === 'seller';
@@ -101,6 +102,7 @@ class User extends Authenticatable
     // Check kung buyer ang user
     // Usage: $user->isBuyer()
     //        @if(auth()->user()->isBuyer()) ... @endif
+    //for middleware
     public function isBuyer(): bool
     {
         return $this->role === 'buyer';
