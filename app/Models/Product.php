@@ -53,7 +53,7 @@ class Product extends Model
     // Favorited By → lahat ng users na nag-favorite ng product na ito
     // Usage: $product->favoritedBy
     //        $product->favoritedBy()->count()
-    public function favoriteBy()
+    public function favoritedBy()
     {
         return $this->belongsToMany(User::class, 'favorites');
     }
