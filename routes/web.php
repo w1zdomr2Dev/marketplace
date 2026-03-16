@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ProductController::class, 'index']);
 
 // View single product
-Route::get('/products/{slug}', [ProductController::class, 'show']);
+Route::get('/products/{slugs}' , [ProductController::class, 'show']);
 
 // Search products
 Route::get('/search', [ProductController::class, 'search']);
